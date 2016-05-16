@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'chutes/parachute_selector'
 
+  resources :chutes
+
   root 'home#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
