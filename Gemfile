@@ -27,3 +27,5 @@ source 'https://rubygems.org'
  gem 'turbolinks'
 
  gem 'bootstrap-sass'
+
+ gem 'simple_form'

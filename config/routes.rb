@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'operations/suggestions'
+
+  get 'triples/tutor'
+
+  get 'chutes/parachute_selector'
+
   root 'home#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
