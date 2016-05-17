@@ -1,7 +1,13 @@
 <h1>Chutes#new</h1>
 
 
-<%= simple_form_for @chute do |f| %>
-  <%= f.input :min_wt %>
-  <%= f.button :submit %>
-<% end %>
+  <%= simple_form_for @chute do |f| %>
+    <p id="turbulent"> Is the wind offshore, or turbulent? </p>
+  <div class="chute_form">
+    <%= f.input :turbulence, inline_label: 'Yes' %>
+    <%= f.input :windspeed %>
+    <%= f.input :max_wt %>
+    <%= f.input :min_wt %>
+    <%= f.button :submit, "Enter Info", class: "btn btn-success btn-lg" %>
+  <% end %>
+</div>
