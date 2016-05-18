@@ -2,12 +2,13 @@
 
 
   <%= simple_form_for @chute do |f| %>
-    <p id="turbulent"> Is the wind offshore, or turbulent? </p>
   <div class="chute_form">
-    <%= f.input :turbulence, inline_label: 'Yes' %>
-    <%= f.input :windspeed %>
-    <%= f.input :max_wt %>
-    <%= f.input :min_wt %>
+    <%= f.input :parachute, collection: ["35 Ft.- Eagle", "Taco", "Burrito"],
+    label: "Select the Chute you are using", :input_html => {:style=> 'width: 200px'} %>
+    <b> <%=  "Are the Air Management Zippers open?"  %> </b>
+    <%= f.input :zippers, label: 'Yes' %>
+    <%= f.input :windspeed, collection: 0..25,
+    :input_html => {:style=> 'width: 50px'}%>
     <%= f.button :submit, "Enter Info", class: "btn btn-success btn-lg" %>
   <% end %>
 </div>

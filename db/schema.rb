@@ -14,10 +14,9 @@
 ActiveRecord::Schema.define(version: 20160516210551) do
 
   create_table "chutes", force: :cascade do |t|
-    t.boolean  "turbulence"
+    t.string   "parachute"
+    t.boolean  "zippers"
     t.integer  "windspeed"
-    t.integer  "min_wt"
-    t.integer  "max_wt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

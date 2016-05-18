@@ -25,7 +25,7 @@ class ChutesController < ApplicationController
   end
 
   def create_params
-    params.require(:chute).permit(:turbulence, :windspeed, :min_wt, :max_wt)
+    params.require(:chute).permit(:parachute, :zippers, :windspeed)
   end
 
 

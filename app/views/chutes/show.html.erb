@@ -1,6 +1,22 @@
-Shit should be here:
+<% if @chute.parachute == '35 Ft.- Eagle' && @chute.zippers == false %>
+  <% if @chute.windspeed > 15 %>
+    <%= @chute.eagle_35_closed(@chute.windspeed) %>
+  <% else %>
+     Minimum Weight:<br>
+     <%= @chute.eagle_35_closed(@chute.windspeed)[0] %><br>
+     Maximum Weight:<br>
+     <%= @chute.eagle_35_closed(@chute.windspeed)[1] %>
+  <% end %>
+<% end %>
 
-<%= @chute.turbulence %>
-<%= @chute.windspeed %>
-<%= @chute.min_wt %>
-<%= @chute.max_wt %>
+<% if @chute.parachute == '35 Ft.- Eagle' && @chute.zippers == true %>
+
+  <% if @chute.windspeed < 10 || @chute.windspeed > 17 %>
+    <%= @chute.eagle_35_open(@chute.windspeed) %>
+  <% else %>
+     Minimum Weight:<br>
+     <%= @chute.eagle_35_open(@chute.windspeed)[0] %><br>
+     Maximum Weight:<br>
+     <%= @chute.eagle_35_open(@chute.windspeed)[1] %>
+  <% end %>
+<% end %>
