@@ -43,7 +43,7 @@ class Chute < ActiveRecord::Base
     elsif windspeed > 17
       return "According to the Manufacturer, It is Too windy to fly a 35 with the Zippers Open"
     else
-      return tristar[windspeed]
+      return eagle[windspeed]
     end
   end
 
