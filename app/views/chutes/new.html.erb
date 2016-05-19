@@ -11,7 +11,7 @@
     <b> <%=  "Are the Air Management Zippers open?"  %> </b>
     <%= f.input :zippers, label: 'Yes' %>
     <%= f.input :windspeed, collection: 0..25, default: 0,
-    :input_html => {:style=> 'width: 50px'}%>
+    :input_html => {:style=> 'width: 80px'}%>
     <%= f.button :submit, "Enter Info", class: "btn btn-success btn-lg" %>
   <% end %>
 </div>
