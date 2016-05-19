@@ -5,7 +5,8 @@
 
   <div class="chute_form">
   <%= simple_form_for @chute do |f| %>
-    <%= f.input :parachute, default: "35 Ft.- Eagle", collection: ["35 Ft.- Eagle", "Taco", "Burrito"],
+    <%= f.input :parachute, default: "35 Ft.- Eagle", collection: ["35 Ft.- Eagle (0-17 mph)",
+    "37 Ft.- TriStar (0-16 mph)"],
     label: "Select the Chute you are using", :input_html => {:style=> 'width: 200px'} %>
     <b> <%=  "Are the Air Management Zippers open?"  %> </b>
     <%= f.input :zippers, label: 'Yes' %>
