@@ -1,10 +1,14 @@
+<p class="chute_show">
 <% if @chute.parachute == '35 Ft.- Eagle' && @chute.zippers == false %>
+  Recommendations for <%= @chute.parachute %> <br>
+  with zippers closed, and
+  <%= @chute.windspeed %> mph wind <br><br>
   <% if @chute.windspeed > 15 %>
     <%= @chute.eagle_35_closed(@chute.windspeed) %>
   <% else %>
-     Minimum Weight:<br>
-     <%= @chute.eagle_35_closed(@chute.windspeed)[0] %><br>
-     Maximum Weight:<br>
+     Minimum Weight:
+     <%= @chute.eagle_35_closed(@chute.windspeed)[0] %><br><br>
+     Maximum Weight:
      <%= @chute.eagle_35_closed(@chute.windspeed)[1] %>
   <% end %>
 <% end %>
@@ -20,3 +24,4 @@
      <%= @chute.eagle_35_open(@chute.windspeed)[1] %>
   <% end %>
 <% end %>
+</p>

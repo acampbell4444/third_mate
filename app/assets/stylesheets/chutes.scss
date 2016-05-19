@@ -1,3 +1,24 @@
 // Place all the styles related to the chutes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.chute_intro {
+  padding: 30px 20px 0px 100px;
+  font-size: 20px;
+  color: navy;
+  font-family: Georgia, serif;
+}
+
+.chute_form {
+  max-width: 350px;
+  padding: 20px 20px 20px 100px
+}
+
+.chute_show {
+  color: purple;
+  max-width: 500px;
+  padding: 20px 20px 20px 100px;
+  color: Seagreen;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  text-align: center;
+}
