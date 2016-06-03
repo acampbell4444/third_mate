@@ -1,24 +1,65 @@
 // Place all the styles related to the chutes controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .chute_intro {
-  padding: 30px 20px 0px 20px;
+  padding: 30px 40px 0px 20px;
   font-size: 20px;
+  max-width: 300px;
   color: navy;
   font-family: Georgia, serif;
 }
 
 .chute_form {
   max-width: 350px;
-  padding: 20px 20px 20px 20px
+  padding: 20px 40px 20px 20px
 }
 
 .chute_show {
-  color: purple;
   max-width: 600px;
-  padding: 20px 20px 20px 20px;
-  color: Seagreen;
+  padding: 20px 40px 20px 20px;
   font-family: Georgia, serif;
   font-size: 20px;
   text-align: center;
+}
+
+.result_text {
+  max-width: 400px;
+  padding: 20px 40px 0px 20px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  margin-left: 25px;
+}
+.too_windy {
+  max-width: 400px;
+  padding: 0px 40px 0px 20px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  margin-left: 25px;
+  color: red;
+}
+
+.min_wt {
+  border: 2px solid black;
+  border-radius: 100px;
+  background-color: green;
+  color: white;
+  padding-top: 8px;
+  text-align: center;
+  max-width: 225px;
+  padding: 8px;
+  margin-left: 45px;
+}
+
+.max_wt {
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 100px;
+  background-color: red;
+  color: white;
+  padding-top: 8px;
+  text-align: center;
+  max-width: 225px;
+  padding: 8px;
+  margin-left: 45px;
 }

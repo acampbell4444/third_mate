@@ -1,17 +1,16 @@
+<p class="chute_intro">
+  Use this tool to make sure you are flying the proper weight in your Chute!
+</p>
 
-  <p class="chute_intro">
-    Use this tool to make sure you are flying the proper weight in your Chute!
-  </p>
-
-  <div class="chute_form">
+<div class="chute_form">
   <%= simple_form_for @chute do |f| %>
     <%= f.input :parachute, default: "35 Ft.- Eagle", collection: ["35 Ft.- Eagle (0-17 mph)",
-    "37 Ft.- TriStar (0-16 mph)"],
+    "37 Ft.- TriStar (0-16 mph)", "39 Ft.- Galaxy (0-14 mph)"],
     label: "Select the Chute you are using", :input_html => {:style=> 'width: 200px'} %>
     <b> <%=  "Are the Air Management Zippers open?"  %> </b>
     <%= f.input :zippers, label: 'Yes' %>
     <%= f.input :windspeed, collection: 0..25, default: 0,
     :input_html => {:style=> 'width: 80px'}%>
-    <%= f.button :submit, "Enter Info", class: "btn btn-success btn-lg" %>
+    <%= f.button :submit, "Enter Info", class: "btn btn-warning btn-lg" %>
   <% end %>
 </div>

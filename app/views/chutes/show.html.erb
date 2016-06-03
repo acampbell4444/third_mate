@@ -1,61 +1,85 @@
-<p class="chute_show">
-
-<% if @chute.parachute == '35 Ft.- Eagle (0-17 mph)' && @chute.zippers == false %>
-  Recommendations for <%= "35' Ft.- Eagle" %> <br>
-  with zippers closed, and
-  <%= @chute.windspeed %> mph wind: <br><br>
-  <% if @chute.windspeed > 15 %>
-    <%= @chute.eagle_35_closed(@chute.windspeed) %>
-  <% else %>
-     Minimum Weight:
-     <%= @chute.eagle_35_closed(@chute.windspeed)[0] %><br><br>
-     Maximum Weight:
-     <%= @chute.eagle_35_closed(@chute.windspeed)[1] %>
-  <% end %>
-<% end %>
-
-<% if @chute.parachute == '35 Ft.- Eagle (0-17 mph)' && @chute.zippers == true %>
-  Recommendations for <%= "35' Ft.- Eagle" %> <br>
-  with zippers open, and
-  <%= @chute.windspeed %> mph wind: <br><br>
-  <% if @chute.windspeed < 10 || @chute.windspeed > 17 %>
-    <%= @chute.eagle_35_open(@chute.windspeed) %>
-  <% else %>
-     Minimum Weight:<br>
-     <%= @chute.eagle_35_open(@chute.windspeed)[0] %><br>
-     Maximum Weight:<br>
-     <%= @chute.eagle_35_open(@chute.windspeed)[1] %>
-  <% end %>
-<% end %>
-
-<% if @chute.parachute == '37 Ft.- TriStar (0-16 mph)' && @chute.zippers == false %>
-  Recommendations for <%= "37' Ft.- Tristar" %> <br>
-  with zippers closed, and
-  <%= @chute.windspeed %> mph wind: <br><br>
-  <% if @chute.windspeed > 14 %>
-    <%= @chute.tristar_37_closed(@chute.windspeed) %>
-  <% else %>
-     Minimum Weight:
-     <%= @chute.tristar_37_closed(@chute.windspeed)[0] %><br><br>
-     Maximum Weight:
-     <%= @chute.tristar_37_closed(@chute.windspeed)[1] %>
-  <% end %>
-<% end %>
-
-<% if @chute.parachute == '37 Ft.- TriStar (0-16 mph)' && @chute.zippers == true %>
-  Recommendations for <%= "37' Ft.- TriStar" %> <br>
-  with zippers open, and
-  <%= @chute.windspeed %> mph wind: <br><br>
-  <% if @chute.windspeed < 9 || @chute.windspeed > 16 %>
-    <%= @chute.tristar_37_open(@chute.windspeed) %>
-  <% else %>
-     Minimum Weight:<br>
-     <%= @chute.tristar_37_open(@chute.windspeed)[0] %><br>
-     Maximum Weight:<br>
-     <%= @chute.tristar_37_open(@chute.windspeed)[1] %>
-  <% end %>
-<% end %>
-
-
-
+<p class="result_text">
+  <% if @chute.parachute == '35 Ft.- Eagle (0-17 mph)' && @chute.zippers == false %>
+    Recommendations for <%= "35' Ft.- Eagle" %>
+    with zippers closed, and
+    <%= @chute.windspeed %> mph wind: <br><br>
 </p>
+    <% if @chute.windspeed > 15 %>
+      <p class="too_windy"><%= @chute.eagle_35_closed(@chute.windspeed) %></p>
+    <% else %>
+      <div class="min_wt">
+        Minimum Weight:
+        <%= @chute.eagle_35_closed(@chute.windspeed)[0] %>
+      </div>
+      <div class="max_wt">
+        Maximum Weight:
+        <%= @chute.eagle_35_closed(@chute.windspeed)[1] %>
+      </div>
+    <% end %>
+  <% end %>
+
+<p class="result_text">
+  <% if @chute.parachute == '35 Ft.- Eagle (0-17 mph)' && @chute.zippers == true %>
+    Recommendations for <%= "35' Ft.- Eagle" %>
+    with zippers open, and
+    <%= @chute.windspeed %> mph wind: <br><br>
+</p>
+  <p class="too_windy">
+    <% if @chute.windspeed < 10 || @chute.windspeed > 17 %>
+      <%= @chute.eagle_35_open(@chute.windspeed) %>
+  </p>
+    <% else %>
+      <div class="min_wt">
+        Minimum Weight:<br>
+        <%= @chute.eagle_35_open(@chute.windspeed)[0] %><br>
+      </div>
+      <div class="max_wt">
+        Maximum Weight:<br>
+       <%= @chute.eagle_35_open(@chute.windspeed)[1] %>
+     </div>
+    <% end %>
+  <% end %>
+
+<p class="result_text">
+  <% if @chute.parachute == '37 Ft.- TriStar (0-16 mph)' && @chute.zippers == false %>
+    Recommendations for <%= "37' Ft.- Tristar" %>
+    with zippers closed, and
+    <%= @chute.windspeed %> mph wind: <br><br>
+</p>
+  <p class="too_windy">
+    <% if @chute.windspeed > 14 %>
+      <%= @chute.tristar_37_closed(@chute.windspeed) %>
+  </p>
+    <% else %>
+      <div class="min_wt">
+        Minimum Weight:
+        <%= @chute.tristar_37_closed(@chute.windspeed)[0] %><br>
+      </div>
+      <div class="max_wt">
+        Maximum Weight:
+       <%= @chute.tristar_37_closed(@chute.windspeed)[1] %>
+     </div>
+    <% end %>
+  <% end %>
+
+<p class="result_text">
+  <% if @chute.parachute == '37 Ft.- TriStar (0-16 mph)' && @chute.zippers == true %>
+    Recommendations for <%= "37' Ft.- TriStar" %>
+    with zippers open, and
+    <%= @chute.windspeed %> mph wind: <br><br>
+</p>
+  <p class="too_windy">
+    <% if @chute.windspeed < 9 || @chute.windspeed > 16 %>
+      <%= @chute.tristar_37_open(@chute.windspeed) %>
+  </p>
+    <% else %>
+    <div class="min_wt">
+       Minimum Weight:<br>
+       <%= @chute.tristar_37_open(@chute.windspeed)[0] %><br>
+    </div>
+    <div class="max_wt">
+      Maximum Weight:<br>
+      <%= @chute.tristar_37_open(@chute.windspeed)[1] %>
+    </div>
+    <% end %>
+  <% end %>
