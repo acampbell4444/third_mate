@@ -83,3 +83,47 @@
     </div>
     <% end %>
   <% end %>
+
+<p class="result_text">
+  <% if @chute.parachute == '39 Ft.- Galaxy (0-14 mph)' && @chute.zippers == false %>
+    Recommendations for <%= "39' Ft.- Galaxy" %>
+    with zippers closed, and
+    <%= @chute.windspeed %> mph wind: <br><br>
+</p>
+  <p class="too_windy">
+    <% if @chute.windspeed > 12 %>
+      <%= @chute.galaxy_39_closed(@chute.windspeed) %>
+  </p>
+    <% else %>
+      <div class="min_wt">
+        Minimum Weight:
+        <%= @chute.galaxy_39_closed(@chute.windspeed)[0] %><br>
+      </div>
+      <div class="max_wt">
+        Maximum Weight:
+       <%= @chute.galaxy_39_closed(@chute.windspeed)[1] %>
+     </div>
+    <% end %>
+  <% end %>
+
+<p class="result_text">
+  <% if @chute.parachute == '39 Ft.- Galaxy (0-14 mph)' && @chute.zippers == true %>
+    Recommendations for <%= "39' Ft.- Galaxy" %>
+    with zippers open, and
+    <%= @chute.windspeed %> mph wind: <br><br>
+</p>
+  <p class="too_windy">
+    <% if @chute.windspeed < 6 || @chute.windspeed > 14 %>
+      <%= @chute.galaxy_39_open(@chute.windspeed) %>
+  </p>
+    <% else %>
+    <div class="min_wt">
+       Minimum Weight:<br>
+       <%= @chute.galaxy_39_open(@chute.windspeed)[0] %><br>
+    </div>
+    <div class="max_wt">
+      Maximum Weight:<br>
+      <%= @chute.galaxy_39_open(@chute.windspeed)[1] %>
+    </div>
+    <% end %>
+  <% end %>

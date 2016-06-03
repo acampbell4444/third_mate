@@ -97,47 +97,46 @@ class Chute < ActiveRecord::Base
   end
 
   def galaxy_39_closed(windspeed)
-    tristar = {
-      0 =>  [120, 410],
-      1 =>  [120, 430],
-      2 =>  [120, 455],
-      3 =>  [120, 475],
-      4 =>  [120, 500],
-      5 =>  [120, 525],
-      6 =>  [120, 525],
-      7 =>  [120, 525],
-      8 =>  [120, 525],
-      9 =>  [120, 525],
-      10 => [200, 525],
-      11 => [275, 525],
-      12 => [360, 525],
-      13 => [450, 525],
-      14 => [475, 525]
+    galaxy = {
+      0 =>  [160, 460],
+      1 =>  [160, 485],
+      2 =>  [160, 520],
+      3 =>  [160, 550],
+      4 =>  [160, 580],
+      5 =>  [160, 580],
+      6 =>  [160, 580],
+      7 =>  [230, 580],
+      8 =>  [300, 580],
+      9 =>  [375, 580],
+      10 => [435, 580],
+      11 => [505, 580],
+      12 => [575, 580]
     }
-    if windspeed > 14
-      return "According to the Manufacturer, It is Too windy to fly a 37 with the Zippers Closed."
+    if windspeed > 12
+      return "According to the Manufacturer, It is Too windy to fly a 39 with the Zippers Closed."
     else
-      return tristar[windspeed]
+      return galaxy[windspeed]
     end
   end
 
   def galaxy_39_open(windspeed)
-    tristar = {
-      9  => [120, 120],
-      10 => [120, 195],
-      11 => [120, 275],
-      12 => [200, 355],
-      13 => [280, 440],
-      14 => [360, 520],
-      15 => [445, 525],
-      16 => [525, 525]
+    galaxy = {
+      6  => [160, 160],
+      7 =>  [160, 225],
+      8 =>  [160, 300],
+      9 =>  [225, 370],
+      10 => [300, 435],
+      11 => [370, 505],
+      12 => [435, 580],
+      13 => [510, 580],
+      14 => [575, 580]
     }
-    if windspeed < 9
-      return "It is not necessary to unzip the 37 until winds reach at least 9 mph"
-    elsif windspeed > 16
-      return "According to the Manufacturer, It is Too windy to fly a 37 with the Zippers Open"
+    if windspeed < 6
+      return "It is not necessary to unzip the 39 until winds reach at least 6 mph"
+    elsif windspeed > 14
+      return "According to the Manufacturer, It is Too windy to fly a 39 with the Zippers Open"
     else
-      return tristar[windspeed]
+      return galaxy[windspeed]
     end
   end
 
